@@ -1,4 +1,4 @@
-import './CampoTexto.css';
+import './CampoTexto.css'
 
 const CampoTexto = (props) => {
     return (
@@ -9,4 +9,4 @@ const CampoTexto = (props) => {
     )
 }
 
-export default CampoTexto;
+export default CampoTexto
