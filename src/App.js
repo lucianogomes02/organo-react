@@ -54,7 +54,7 @@ function App() {
       <Formulario
           times={times.map(time  => time.nome)}
           aoColaboradorCadastrado={
-          colaborador => aoNovoColaboradorAdicionado(colaborador)
+            colaborador => aoNovoColaboradorAdicionado(colaborador)
           }
       />
 
@@ -64,6 +64,7 @@ function App() {
             nome={time.nome}
             corPrimaria={time.corPrimaria}
             corSecundaria={time.corSecundaria}
+            colaboradores={colaboradores}
       />)}
     </div>
   );
