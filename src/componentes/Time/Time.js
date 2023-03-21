@@ -6,6 +6,7 @@ const Time = (props) => {
     const cssH3 = {borderColor: props.corPrimaria}
 
     return (
+        props.colaboradores.length > 0 &&
         <section className="time" style={cssSection}>
             <h3 style={cssH3}>{props.nome}</h3>
             <div className='colaboradores'>
