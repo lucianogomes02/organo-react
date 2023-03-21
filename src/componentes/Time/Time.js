@@ -13,8 +13,8 @@ const Time = (props) => {
                     <Colaborador
                         key={colaborador.nome}
                         nome={colaborador.nome}
-                        cargo={colaborador.cargo}
                         imagem={colaborador.imagem}
+                        cargo={colaborador.cargo}
                     />
                 )
                 }
