@@ -16,6 +16,7 @@ const Time = (props) => {
                         nome={colaborador.nome}
                         imagem={colaborador.imagem}
                         cargo={colaborador.cargo}
+                        corDeFundo={props.corPrimaria}
                     />
                 )
                 }
