@@ -10,7 +10,7 @@ const Formulario = (props) => {
     const [nome, setNome] = useState('')
     const [cargo, setCargo] = useState('')
     const [imagem, setImagem] = useState('http://github.com/lucianogomes02.png')
-    const [time, setTime] = useState('Programação')
+    const [time, setTime] = useState('')
 
     const aoSalvar = (evento) => {
         evento.preventDefault()
@@ -25,7 +25,7 @@ const Formulario = (props) => {
         setNome("")
         setCargo("")
         setImagem("http://github.com/lucianogomes02.png")
-        setTime("Programação")
+        setTime("")
     }
 
     return (
