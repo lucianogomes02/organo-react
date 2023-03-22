@@ -48,6 +48,11 @@ function App() {
     const aoNovoColaboradorAdicionado = (colaborador) => {
         setColaboradores([...colaboradores, colaborador])
     }
+
+    function deletarColaborador() {
+        console.log('Colaborador deletado')
+    }
+
   return (
     <div className="App">
       <Banner/>
@@ -69,6 +74,7 @@ function App() {
                     colaborador => colaborador.time === time.nome
                 )
             }
+            aoDeletar={deletarColaborador}
       />)}
     </div>
   );
