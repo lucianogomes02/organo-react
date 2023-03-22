@@ -53,14 +53,24 @@ function App() {
         ]
     )
 
-    const [colaboradores, setColaboradores] = useState([])
+    const colaboradorInicial = [
+        {
+            id: uuidv4(),
+            nome: 'Luciano Gomes',
+            imagem: 'http://github.com/lucianogomes02.png',
+            cargo: 'Desenvolvedor Python',
+            time: 'Programação'
+        }
+    ]
+
+    const [colaboradores, setColaboradores] = useState(colaboradorInicial)
 
     const aoNovoColaboradorAdicionado = (colaborador) => {
         setColaboradores([...colaboradores, colaborador])
     }
 
-    function deletarColaborador() {
-        console.log('Colaborador deletado')
+    function deletarColaborador(id) {
+        setColaboradores(colaboradores.filter(colaborador => colaborador.id !== id))
     }
 
     function mudarCorDoTime(cor, id) {

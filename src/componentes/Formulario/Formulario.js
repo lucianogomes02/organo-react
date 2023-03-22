@@ -2,11 +2,13 @@ import CampoTexto from "../CampoTexto/CampoTexto"
 import "./Formulario.css"
 import ListaSuspensa from "../ListaSuspensa/ListaSuspensa";
 import Botao from "../Botao/Botao";
+import { v4 as uuidv4 } from 'uuid'
 
 import {useState} from "react";
 
 const Formulario = (props) => {
 
+    const [id] = useState(uuidv4())
     const [nome, setNome] = useState('')
     const [cargo, setCargo] = useState('')
     const [imagem, setImagem] = useState('http://github.com/lucianogomes02.png')
@@ -16,6 +18,7 @@ const Formulario = (props) => {
         evento.preventDefault()
         props.aoColaboradorCadastrado(
             {
+                id: id,
                 nome: nome,
                 cargo: cargo,
                 imagem: imagem,
