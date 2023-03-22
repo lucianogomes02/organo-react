@@ -8,6 +8,7 @@ const Time = ({ colaboradores, nome, corPrimaria, corSecundaria, aoDeletar }) =>
     return (
         colaboradores.length > 0 &&
         <section className="time" style={cssSection}>
+            <input type='color' className='input-cor' value={corSecundaria} />
             <h3 style={cssH3}>{nome}</h3>
             <div className='colaboradores'>
                 {colaboradores.map((colaborador, indice) =>
