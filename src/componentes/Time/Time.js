@@ -1,24 +1,26 @@
 import './Time.css'
 import Colaborador from "../Colaborador/Colaborador";
+import { v4 as uuidv4 } from 'uuid'
 
-const Time = ({ colaboradores, nome, corPrimaria, corSecundaria, mudarCor, aoDeletar }) => {
-    const cssSection = { backgroundColor: corSecundaria }
-    const cssH3 = {borderColor: corPrimaria}
+const Time = ({ colaboradores, time, mudarCor, aoDeletar }) => {
+    const cssSection = { backgroundColor: time.corSecundaria }
+    const cssH3 = {borderColor: time.corPrimaria}
 
     return (
         colaboradores.length > 0 &&
         <section className="time" style={cssSection}>
-            <input type='color' className='input-cor' value={corSecundaria} onChange={evento => mudarCor(evento.target.value, nome)}/>
-            <h3 style={cssH3}>{nome}</h3>
+            <input type='color' className='input-cor' value={time.corSecundaria} onChange={evento => mudarCor(evento.target.value, time.id)}/>
+            <h3 style={cssH3}>{time.nome}</h3>
             <div className='colaboradores'>
-                {colaboradores.map((colaborador, indice) =>
+                {colaboradores.map(colaborador =>
                         {
                             return <Colaborador
-                                key={indice}
+                                key={uuidv4()}
+                                id={uuidv4()}
                                 nome={colaborador.nome}
                                 imagem={colaborador.imagem}
                                 cargo={colaborador.cargo}
-                                corDeFundo={corPrimaria}
+                                corDeFundo={time.corPrimaria}
                                 aoDeletar={aoDeletar}
                             />
                         }
