@@ -1,7 +1,7 @@
 import './Time.css'
 import Colaborador from "../Colaborador/Colaborador";
 
-const Time = ({ colaboradores, time, mudarCor, aoDeletar }) => {
+const Time = ({ colaboradores, time, mudarCor, aoDeletar, aoFavoritar }) => {
     const cssSection = { backgroundColor: time.corSecundaria }
     const cssH3 = {borderColor: time.corPrimaria}
 
@@ -18,6 +18,7 @@ const Time = ({ colaboradores, time, mudarCor, aoDeletar }) => {
                                 colaborador={colaborador}
                                 corDeFundo={time.corPrimaria}
                                 aoDeletar={aoDeletar}
+                                aoFavoritar={aoFavoritar}
                             />
                         }
                     )

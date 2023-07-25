@@ -10,42 +10,49 @@ function App() {
         [
             {
                 id: uuidv4(),
+                favorito: false,
                 nome: "Programação",
                 corPrimaria: "#57C278",
                 corSecundaria: "#D9F7E9"
             },
             {
                 id: uuidv4(),
+                favorito: false,
                 nome: "Front-end",
                 corPrimaria: "#82CFFA",
                 corSecundaria: "#E8F8FF"
             },
             {
                 id: uuidv4(),
+                favorito: false,
                 nome: "Data Science",
                 corPrimaria: "#A6D157",
                 corSecundaria: "#F0F8E2"
             },
             {
                 id: uuidv4(),
+                favorito: false,
                 nome: "DevOps",
                 corPrimaria: "#E06B69",
                 corSecundaria: "#FDE7E8"
             },
             {
                 id: uuidv4(),
+                favorito: false,
                 nome: "UX e Design",
                 corPrimaria: "#DB6EBF",
                 corSecundaria: "#FAE9F5"
             },
             {
                 id: uuidv4(),
+                favorito: false,
                 nome: "Mobile",
                 corPrimaria: "#FFBA05",
                 corSecundaria: "#FFF5D9"
             },
             {
                 id: uuidv4(),
+                favorito: false,
                 nome: "Inovação e Gestão",
                 corPrimaria: "#FF8A29",
                 corSecundaria: "#FFEEDF"
@@ -89,6 +96,13 @@ function App() {
         setTimes([...times, {...novoTime, id: uuidv4()}])
     }
 
+    function resolverFavorito(id) {
+        setColaboradores(colaboradores.map(colaborador => {
+            if (colaborador.id === id) colaborador.favorito = !colaborador.favorito;
+            return colaborador
+        }))
+    }
+
   return (
     <div className="App">
       <Banner/>
@@ -111,6 +125,7 @@ function App() {
             }
             mudarCor={mudarCorDoTime}
             aoDeletar={deletarColaborador}
+            aoFavoritar={resolverFavorito}
       />)}
     </div>
   )
